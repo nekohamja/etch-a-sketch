@@ -1,2 +1,2 @@
-# etch-a-sketch
-Etch - a - sketch - like web app.
+# pixel drawer
+pixel drawer web app.
