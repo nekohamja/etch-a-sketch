@@ -10,46 +10,62 @@
     <title>Etch - A - Sketch</title>
   </head>
   <body>
-    <div class="container main"></div>
+    <div class="container gridbox"></div>
 
-    <div class="container setting">
-      <div class="actions">
-        <div class="button"><i class="gg-color-picker"></i></div>
-        <div class="button"><i class="gg-undo"></i></div>
-        <div class="button"><i class="gg-erase"></i></div>
+    <div class="controls">
+      <div class="container setting">
+        <div class="actions">
+          <div class="button">
+            <input type="color" value="#2A2A2A" class="button picker" />
+          </div>
+          <div class="button"><i class="gg-undo"></i></div>
+          <div class="button"><i class="gg-erase"></i></div>
+        </div>
+
+        <div class="mode">
+          <div class="button color active">Color</div>
+          <div class="button rainbow">Rainbow</div>
+        </div>
+
+        <div>
+          <input
+            class="slider"
+            type="range"
+            min="32"
+            max="96"
+            value="32"
+            step="32"
+            list="ticks"
+          />
+          <datalist id="ticks">
+            <option value="32" label="32"></option>
+            <option value="64" label="64"></option>
+            <option value="96" label="96"></option>
+          </datalist>
+        </div>
       </div>
 
-      <div class="mode">
-        <div class="button">Color</div>
-        <div class="button rainbow">Rainbow</div>
+      <div class="container socials">
+        <a href="https://github.com/nekohamja" target="_blank">
+          <img
+            class="icon-big"
+            src="./socmed-icons/github-svgrepo-com.svg"
+            alt="github"
+        /></a>
+        <a href="https://www.linkedin.com/in/nekhros/" target="_blank">
+          <img
+            class="icon"
+            src="./socmed-icons/linkedin-svgrepo-com.svg"
+            alt="linkedin"
+        /></a>
+        <a href="https://www.instagram.com/nekhrotic/" target="_blank">
+          <img
+            class="icon"
+            src="./socmed-icons/instagram-svgrepo-com.svg"
+            alt="instagram"
+          />
+        </a>
       </div>
-
-      <div class="description">Size: 10x10</div>
-      <div>
-        <input type="range" min="2" max="100" value="32" class="slider" />
-      </div>
-    </div>
-
-    <div class="socials">
-      <a href="https://github.com/nekohamja" target="_blank">
-        <img
-          class="icon-big"
-          src="./socmed-icons/github-svgrepo-com.svg"
-          alt="github"
-      /></a>
-      <a href="https://www.linkedin.com/in/nekhros/" target="_blank">
-        <img
-          class="icon"
-          src="./socmed-icons/linkedin-svgrepo-com.svg"
-          alt="linkedin"
-      /></a>
-      <a href="https://www.instagram.com/nekhrotic/" target="_blank">
-        <img
-          class="icon"
-          src="./socmed-icons/instagram-svgrepo-com.svg"
-          alt="instagram"
-        />
-      </a>
     </div>
   </body>
 </html>
