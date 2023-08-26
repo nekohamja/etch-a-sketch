@@ -2,9 +2,9 @@
 const GRID_S = 32;
 const GRID_M = 64;
 const GRID_L = 96;
-const BOX_S = "20px";
-const BOX_M = "10px";
-const BOX_L = "6.5px";
+const BOX_S = "box-small";
+const BOX_M = "box-medium";
+const BOX_L = "box-large";
 
 const DEFAULT_BOX_SIZE = BOX_S;
 const DEFAULT_COLOR = "#2A2A2A";
@@ -50,14 +50,14 @@ function setSelectedMode(newMode) {
 function createGrid() {
   const deleteBox = document.querySelectorAll(".grid");
   for (let i = 0; i < deleteBox.length; i++) deleteBox[i].remove();
-  if (slider.value == GRID_M) selectedSize = BOX_M;
-  else if (slider.value == GRID_L) selectedSize = BOX_L;
-  else selectedSize = BOX_S;
   container.style.gridTemplateColumns = `repeat(${slider.value}, 1fr)`;
   container.style.gridTemplateRows = `repeat(${slider.value}, 1fr)`;
   for (let i = 1; i <= slider.value * slider.value; i++) {
     const gridBox = document.createElement("div");
     gridBox.classList.add("grid");
+    if (slider.value == GRID_M) selectedSize = gridBox.classList.add(BOX_M);
+    else if (slider.value == GRID_L) gridBox.classList.add(BOX_L);
+    else selectedSize = gridBox.classList.add(BOX_S);
     gridBox.style.height = selectedSize;
     gridBox.style.width = selectedSize;
     gridBox.addEventListener("mouseover", draw);
